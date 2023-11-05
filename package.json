@@ -1,0 +1,25 @@
+{
+    "name": "dead-code-eliminator",
+    "version": "1.0.0",
+    "description": "A Simple Static Analyzer created for fun",
+    "main": "eliminator.js",
+    "scripts": {
+      "test": "node eliminator -i ./example/script.js -o ./example/modified-script.js"
+    },
+    "author": "l33t-c0d3r-66",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "cheerio": "^1.0.0-rc.2",
+        "command-line-args": "^5.0.2",
+        "download-file-sync": "^1.0.4",
+        "escodegen": "^2.1.0",
+        "esprima": "^4.0.1",
+        "express": "^4.16.4",
+        "fs": "0.0.1-security",
+        "fs-extra": "^7.0.1",
+        "prompt-confirm": "^2.0.4",
+        "prompt-sync": "^4.1.6",
+        "winston": "^3.2.1"
+    }
+  }
+  
