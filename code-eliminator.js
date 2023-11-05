@@ -4,7 +4,6 @@ const fs = require('fs-extra'),
 
 const esprima = require('esprima');
 const escodegen = require('escodegen');
-const { readFileSync } = require('fs');
 async function run(passedRunOptions) {
     if (!passedRunOptions) { 
         console.log("Invalid Passed Arguemnts");
@@ -23,10 +22,9 @@ function removeUnusedFunctions(inputFile) {
     let code = fs.readFileSync(inputFile, "utf-8");
     const ast = esprima.parseScript(code, { range: true, loc: true });
   
-    const declaredFunctions = {} // Use Set to store function names
+    const declaredFunctions = {}
     const calledFunctions = {};
-  
-    // Traverse the AST and collect declared and called functions
+
     function traverse(node) {
       if (
         (node.type === 'VariableDeclaration' && node.kind === 'const' && node.declarations.length === 1 &&
