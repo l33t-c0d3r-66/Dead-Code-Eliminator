@@ -53,9 +53,7 @@ function removeUnusedFunctions(inputFile) {
   
     traverse(ast);
   
-    // Identify unused arrow functions
     const unusedArrowFunctions = Object.keys(declaredFunctions).filter(fun => !calledFunctions[fun]);
-    // Remove unused arrow functions from the AST
     ast.body = ast.body.filter((node) => {
       if (
         node.type === 'VariableDeclaration' &&
